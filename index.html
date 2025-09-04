@@ -1,215 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESUME</title>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        body {
-            font-family: 'Times New Roman', SimSun, serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .section {
-            margin: 20px 0;
-        }
-        .section-title {
-            border-bottom: 2px solid #333;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-        }
-        .entry {
-            margin: 10px 0;
-        }
-        .date {
-            float: right;
-            color: #666;
-        }
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-info {
-            text-align: center;
-            line-height: 1.8;
-        }
-        .education-date {
-            color: #666;
-            font-size: 0.9em;
-        }
-        .footer {
-            margin-top: 40px;
-            border-top: 1px solid #ccc;
-            padding-top: 10px;
-            text-align: center;
-            font-size: 0.8em; /* Smaller font size for the footer */
-            color: #666;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Yuan - Curriculum Vitae</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', SimSun, serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 500;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #888; /* This styles the color of the dot separators */
+            letter-spacing: 0.5px;
+        }
+        .contact-info a {
+            color: #0056b3;
+            text-decoration: none;
+            margin: 0 6px; /* Fine-tuned margin for the dot separator */
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .entry {
+            margin-bottom: 15px;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        .entry-title {
+            font-weight: bold;
+        }
+        .entry-location {
+            font-style: italic;
+            color: #555;
+        }
+        .entry-date {
+            color: #666;
+            white-space: nowrap; /* Prevents date from wrapping */
+            padding-left: 20px; /* Adds space between content and date */
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .publications-list li {
+            margin-bottom: 10px;
+        }
+        .publications-list em {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-        <div class="section">
-        <h1 style="text-align: center;">David Yuan</h1>
-    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Research Interests</h2>
-        <div class="entry">
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li>\(\bullet\) Yin-Yang Theory</li>
-                <li>\(\bullet\) Software Engineering - Code Analysis, Software Testing, and Maintenance</li>
-                <li>\(\bullet\) Large Language Models (LLM) - Applications in Software Engineering</li>
-                <li>\(\bullet\) Web3 - Smart Contract Security and Blockchain Technology</li>
-                <li>\(\bullet\) Embedded Systems - IoT and Real-time Systems</li>
-            </ul>
-        </div>
-    </div>
+    <div class="header">
+        <h1>David Yuan</h1>
+        <div class="contact-info">
+            <a href="mailto:yuandawei@gdust.edu.cn">yuandawei@gdust.edu.cn</a> &middot;
+            <a href="https://github.com/davidyuan666" target="_blank">GitHub</a> &middot;
+            <a href="https://scholar.google.com/citations?user=CtGfU0UAAAAJ&hl=en" target="_blank">Google Scholar</a> &middot;
+            <a href="https://www.modelscope.cn/profile/davidyuan666" target="_blank">ModelScope</a>
+        </div>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Education</h2>
-        <div class="entry">
-            <strong>Macau University of Science and Technology</strong>
-            <br>
-            Ph.D. in Artificial Intelligence
-        </div>
-        <div class="entry">
-            <strong>University of Science and Technology of China</strong>
-            <br>
-            Master of Software Engineering
-        </div>
-        <div class="entry">
-            <strong>Nanjing University of Posts and Telecommunications</strong>
-            <br>
-            Bachelor of Network Engineering
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Research Interests</h2>
+        <ul>
+            <li>Yin-Yang Theory</li>
+            <li>Software Engineering: Code Analysis, Software Testing, and Maintenance</li>
+            <li>Large Language Models (LLM): Applications in Software Engineering</li>
+            <li>Web3: Smart Contract Security and Blockchain Technology</li>
+            <li>Embedded Systems: IoT and Real-time Systems</li>
+        </ul>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Academic Experience</h2>
-        <div class="entry">
-            <span class="date">2025 - Present</span>
-            <strong>Guangdong University of Science and Technology, Dongguan, Guangdong</strong> - Assistant Professor
-            <br>
-            <ul>
-                <li>Research focus on Software Engineering and LLM applications</li>
-                <li>Teaching computer science and related courses</li>
-            </ul>
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Ph.D. in Artificial Intelligence</span><br>
+                    <span class="entry-location">Macau University of Science and Technology</span>
+                </div>
+                <div class="entry-date">2020 – 2024</div>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Master of Software Engineering</span><br>
+                    <span class="entry-location">University of Science and Technology of China</span>
+                </div>
+                <div class="entry-date">2014 – 2016</div>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Bachelor of Network Engineering</span><br>
+                    <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
+                </div>
+                <div class="entry-date">2009 – 2013</div>
+            </div>
+        </div>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Industrial Experience</h2>
-        <div class="entry">
-            <span class="date">May 2024 - 2025</span>
-            <strong>Vesync(晨北科技), Shenzhen</strong> - Senior Algorithm Engineer
-            <br>
-            <ul>
-                <li>Large language model algorithm development and optimization</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <span class="date">June 2023 - May 2024</span>
-            <strong>BitAuto(易車), Beijing</strong> - Senior Algorithm Engineer
-            <br>
-            <ul>
-                <li>Yiche APP recommendation system development</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <span class="date">Dec 2022 - May 2023</span>
-            <strong>Oujian Group(欧坚网络), Shanghai</strong> - Algorithm Team Leader
-            <br>
-            <ul>
-                <li>Led development of Export/Import Customized Service System</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <span class="date">Dec 2016 - Aug 2020</span>
-            <strong>United Imaging Healthcare(联影医疗), Shanghai</strong> - Software Engineer
-            <br>
-            <ul>
-                <li>Developed and maintained PACS/RIS medical imaging systems</li>
-            </ul>
-        </div>
-        <div class="entry">
-            <span class="date">Aug 2013 - May 2014</span>
-            <strong>Uniquesoft LLC(友励科软件), Shanghai</strong> - Software Engineer Internship
-            <br>
-            <ul>
-                <li>Developed and maintained ReWEB systems</li>
-            </ul>
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Academic Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Assistant Professor</span><br>
+                    <span class="entry-location">Guangdong University of Science and Technology, Dongguan, Guangdong</span>
+                </div>
+                <div class="entry-date">2025 – Present</div>
+            </div>
+            <ul>
+                <li>Research focus on Software Engineering and LLM applications</li>
+                <li>Teaching computer science and related courses</li>
+            </ul>
+        </div>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Teaching Experience</h2>
-        <div class="entry">
-            <span class="date">2025 - Present</span>
-            <strong>JavaEE Framework</strong> - Teaching Course
-            <br>
-            <strong>Principles of Computer Organization</strong> - Teaching Course
-            <br>
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Industrial Experience</h2>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Senior Algorithm Engineer</span><br>
+                    <span class="entry-location">Vesync (晨北科技), Shenzhen</span>
+                </div>
+                <div class="entry-date">May 2024 – 2025</div>
+            </div>
+            <ul>
+                <li>Large language model algorithm development and optimization</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Senior Algorithm Engineer</span><br>
+                    <span class="entry-location">BitAuto (易車), Beijing</span>
+                </div>
+                <div class="entry-date">June 2023 – May 2024</div>
+            </div>
+            <ul>
+                <li>Developed and maintained the recommendation system for the Yiche mobile application</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Algorithm Team Leader</span><br>
+                    <span class="entry-location">Oujian Group (欧坚网络), Shanghai</span>
+                </div>
+                <div class="entry-date">Dec 2022 – May 2023</div>
+            </div>
+            <ul>
+                <li>Led the development of an Export/Import Customized Service System</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Software Engineer</span><br>
+                    <span class="entry-location">United Imaging Healthcare (联影医疗), Shanghai</span>
+                </div>
+                <div class="entry-date">Dec 2016 – Aug 2020</div>
+            </div>
+            <ul>
+                <li>Developed and maintained PACS/RIS medical imaging systems</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Software Engineer Internship</span><br>
+                    <span class="entry-location">Uniquesoft LLC (友励科软件), Shanghai</span>
+                </div>
+                <div class="entry-date">Aug 2013 – May 2014</div>
+            </div>
+            <ul>
+                <li>Developed and maintained ReWEB systems</li>
+            </ul>
+        </div>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Selected Publications</h2>
-        <div class="entry">
-            <ul style="list-style-type: none; padding-left: 0;">
-                <li>\(\bullet\) Do Pretrained Language Models Indeed Understand Software Engineering Tasks? <br>
-                    <em>IEEE Transactions on Software Engineering (TSE)</em>, 2023 
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) Java Code Clone Detection by Exploiting Semantic and Syntax Information From Intermediate Code-Based Graph<br>
-                    <em>IEEE Transactions on Reliability (TR)</em>, 2023 
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) Optimizing smart contract vulnerability detection via multi-modality code and entropy embedding<br>
-                    <em>Journal of Systems and Software (JSS)</em>, 2023 
-                    [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) Meta-Learning for Multi-Family Android Malware Classification<br>
-                    <em>ACM Transactions on Software Engineering and Methodology (TOSEM)</em>, 2024 
-                    [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) Code Context-Based Reviewer Recommendation<br>
-                    <em>Frontiers of Computer Science (FCS)</em>, 2023 
-                    [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) UNA: Improving Automated PL-NL System by A Unified Neural Architecture<br>
-                    <em>IEEE Transactions on Reliability (TR)</em>, 2025 
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]</li>
-                <li>\(\bullet\) UI2HTML: utilizing LLM agents with chain of thought to convert UI into HTML code<br>
-                    <em>Automated Software Engineering</em>, 2025 
-                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]</li>
-            </ul>
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Teaching Experience</h2>
+        <div class="entry">
+             <div class="entry-header">
+                <div>
+                    <span class="entry-title">Instructor</span><br>
+                    <span class="entry-location">Guangdong University of Science and Technology</span>
+                </div>
+                <div class="entry-date">2025 – Present</div>
+            </div>
+            <ul>
+                <li>JavaEE Framework</li>
+                <li>Principles of Computer Organization</li>
+            </ul>
+        </div>
+    </div>
 
-        <div class="section">
-        <h2 class="section-title">\(\S\) Reviewer Service</h2>
-        <div class="entry">
-            <strong>Journal Reviewer</strong>
-            <ul>
-                <li>Cluster Computing</li>
-                <li>Journal of Cloud Computing</li>
-                <li>Scientific Reports</li>
-                <li>International Journal of Data Science and Analytics</li>
-                <li>Automated Software Engineering</li>
-            </ul>
-        </div>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Selected Publications</h2>
+        <ul class="publications-list">
+            <li>Do Pretrained Language Models Indeed Understand Software Engineering Tasks? <br>
+                <em>IEEE Transactions on Software Engineering (TSE)</em>, 2023 
+                [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]
+            </li>
+            <li>Java Code Clone Detection by Exploiting Semantic and Syntax Information From Intermediate Code-Based Graph<br>
+                <em>IEEE Transactions on Reliability (TR)</em>, 2023 
+                [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
+            </li>
+            <li>Optimizing smart contract vulnerability detection via multi-modality code and entropy embedding<br>
+                <em>Journal of Systems and Software (JSS)</em>, 2023 
+                [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
+            </li>
+            <li>Meta-Learning for Multi-Family Android Malware Classification<br>
+                <em>ACM Transactions on Software Engineering and Methodology (TOSEM)</em>, 2024 
+                [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]
+            </li>
+            <li>Code Context-Based Reviewer Recommendation<br>
+                <em>Frontiers of Computer Science (FCS)</em>, 2023 
+                [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]
+            </li>
+            <li>UNA: Improving Automated PL-NL System by A Unified Neural Architecture<br>
+                <em>IEEE Transactions on Reliability (TR)</em>, 2025 
+                [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+            </li>
+            <li>UI2HTML: utilizing LLM agents with chain of thought to convert UI into HTML code<br>
+                <em>Automated Software Engineering</em>, 2025 
+                [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]
+            </li>
+        </ul>
+    </div>
 
-        <div class="footer">
-        <p>
-            \(\bullet\) Email: <a href="mailto:yuandawei@gdust.edu.cn">yuandawei@gdust.edu.cn</a> (<a href="mailto:wu.xiguanghua2014@gmail.com">wu.xiguanghua2014@gmail.com</a>)
-            \(\bullet\) GitHub: <a href="https://github.com/davidyuan666" target="_blank">davidyuan666</a>
-            \(\bullet\) Google Scholar: <a href="https://scholar.google.com/citations?user=CtGfU0UAAAAJ&hl=en" target="_blank">Profile</a>
-            \(\bullet\) ModelScope: <a href="https://www.modelscope.cn/profile/davidyuan666" target="_blank">ModelScope</a>
-        </p>
-    </div>
+    <div class="section">
+        <h2 class="section-title">Reviewer Service</h2>
+        <ul>
+            <li>Cluster Computing</li>
+            <li>Journal of Cloud Computing</li>
+            <li>Scientific Reports</li>
+            <li>International Journal of Data Science and Analytics</li>
+            <li>Automated Software Engineering</li>
+        </ul>
+    </div>
 
 </body>
 </html>
