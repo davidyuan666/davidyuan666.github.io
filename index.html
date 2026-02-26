@@ -8,81 +8,148 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body {
-            font-family: Georgia, 'Times New Roman', SimSun, serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
-            font-weight: 500;
+            font-size: 3em;
+            font-weight: 700;
+            color: #1a202c;
+            letter-spacing: -1px;
         }
         .contact-info {
-            margin-top: 15px;
-            font-size: 0.9em;
-            color: #888; /* This styles the color of the dot separators */
-            letter-spacing: 0.5px;
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #718096;
+            letter-spacing: 0.3px;
         }
         .contact-info a {
-            color: #0056b3;
+            color: #3182ce;
             text-decoration: none;
-            margin: 0 6px; /* Fine-tuned margin for the dot separator */
+            margin: 0 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         .contact-info a:hover {
-            text-decoration: underline;
+            color: #2c5282;
+            text-decoration: none;
+            transform: translateY(-2px);
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
         .section-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #2d3748;
+            border-bottom: 3px solid #4299e1;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         .entry {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 3px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .entry:hover {
+            border-left-color: #4299e1;
+            background: #f7fafc;
+            padding-left: 20px;
         }
         .entry-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         .entry-title {
-            font-weight: bold;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.05em;
         }
         .entry-location {
             font-style: italic;
-            color: #555;
+            color: #4a5568;
+            font-size: 0.95em;
         }
         .entry-date {
-            color: #666;
-            white-space: nowrap; /* Prevents date from wrapping */
-            padding-left: 20px; /* Adds space between content and date */
+            color: #718096;
+            white-space: nowrap;
+            padding-left: 20px;
+            font-weight: 500;
+            font-size: 0.9em;
         }
         ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: none;
+            padding-left: 0;
             margin: 0;
         }
+        ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #4a5568;
+        }
+        ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+            font-weight: bold;
+        }
         .publications-list li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .publications-list li:before {
+            content: none;
+        }
+        .publications-list li:hover {
+            background: #edf2f7;
+            transform: translateX(5px);
         }
         .publications-list em {
             font-style: italic;
+            color: #2c5282;
+            font-weight: 500;
+        }
+        .publications-list a {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .publications-list a:hover {
+            color: #2c5282;
         }
     </style>
 </head>
