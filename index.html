@@ -14,9 +14,9 @@
             line-height: 1.4;
             color: #000;
             background: #fff;
-            max-width: 210mm;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 2mm;
+            padding: 0 10px;
         }
 
         a { color: #1a56db; text-decoration: none; }
@@ -110,7 +110,7 @@
         }
 
         @media print {
-            body { padding: 0 2mm; }
+            body { max-width: 210mm; padding: 0 2mm; }
         }
         @media screen and (max-width: 800px) {
             .main-grid { grid-template-columns: 1fr; }
@@ -251,6 +251,7 @@
                     <li>Operating Systems</li>
                     <li>JavaEE Framework</li>
                     <li>Principles of Computer Organization</li>
+                    <li>Linux System Administration</li>
                 </ul>
             </div>
 
@@ -280,7 +281,15 @@
                 <div class="section-title">Publications</div>
 
                 <div class="pub-item">
-                    [1] Y. Li, T. Zhang, X. Luo, H. Cai, S. Fang, <span class="self">D. Yuan</span>.
+                    [1] <span class="self">D. Yuan</span>, S. Fang, T. Zhang, Z. Xu, X. Luo.
+                    &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph.&rdquo;
+                    <em>IEEE Trans. Rel.</em>, 72(2):511&ndash;526, 2022.
+                    <span class="cite-count">[26]</span>
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
+                </div>
+
+                <div class="pub-item">
+                    [2] Y. Li, T. Zhang, X. Luo, H. Cai, S. Fang, <span class="self">D. Yuan</span>.
                     &ldquo;Do Pretrained Language Models Indeed Understand Software Engineering Tasks?&rdquo;
                     <em>IEEE Trans. Softw. Eng.</em>, 49(10):4639&ndash;4655, 2023.
                     <span class="cite-count">[30]</span>
@@ -288,19 +297,11 @@
                 </div>
 
                 <div class="pub-item">
-                    [2] <span class="self">D. Yuan</span>, X. Wang, Y. Li, T. Zhang.
+                    [3] <span class="self">D. Yuan</span>, X. Wang, Y. Li, T. Zhang.
                     &ldquo;Optimizing Smart Contract Vulnerability Detection via Multi-Modality Code and Entropy Embedding.&rdquo;
                     <em>J. Syst. Softw.</em>, 202:111699, 2023.
                     <span class="cite-count">[26]</span>
                     [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
-                </div>
-
-                <div class="pub-item">
-                    [3] <span class="self">D. Yuan</span>, S. Fang, T. Zhang, Z. Xu, X. Luo.
-                    &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph.&rdquo;
-                    <em>IEEE Trans. Rel.</em>, 72(2):511&ndash;526, 2022.
-                    <span class="cite-count">[26]</span>
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -312,7 +313,14 @@
                 </div>
 
                 <div class="pub-item">
-                    [5] <span class="self">D. Yuan</span>, G. Yang, T. Zhang.
+                    [5] <span class="self">D. Yuan</span>, T. Zhang, H. Jiang.
+                    &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture.&rdquo;
+                    <em>IEEE Trans. Rel.</em>, 2025.
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+                </div>
+
+                <div class="pub-item">
+                    [6] <span class="self">D. Yuan</span>, G. Yang, T. Zhang.
                     &ldquo;UI2HTML: Utilizing LLM Agents with Chain of Thought to Convert UI into HTML Code.&rdquo;
                     <em>Autom. Softw. Eng.</em>, 32(2):41, 2025.
                     <span class="cite-count">[12]</span>
@@ -320,7 +328,7 @@
                 </div>
 
                 <div class="pub-item">
-                    [6] <span class="self">D. Yuan</span>, X. Peng, Z. Chen, T. Zhang, R. Lei.
+                    [7] <span class="self">D. Yuan</span>, X. Peng, Z. Chen, T. Zhang, R. Lei.
                     &ldquo;Code Context-Based Reviewer Recommendation.&rdquo;
                     <em>Front. Comput. Sci.</em>, 19(1):191202, 2025.
                     <span class="cite-count">[2]</span>
@@ -328,7 +336,7 @@
                 </div>
 
                 <div class="pub-item">
-                    [7] <span class="self">D. Yuan</span>, G. Liang, T. Li, S. Liu.
+                    [8] <span class="self">D. Yuan</span>, G. Liang, T. Li, S. Liu.
                     &ldquo;Enhancing Queries for Code Generation with Reinforcement Learning.&rdquo;
                     <em>Sci. Rep.</em>, 15(1):37300, 2025.
                     <span class="cite-count">[1]</span>
@@ -336,43 +344,36 @@
                 </div>
 
                 <div class="pub-item">
-                    [8] <span class="self">D. Yuan</span>, B. Liu, G. Liang.
-                    &ldquo;A Framework for Comparing Reasoning Between ChatGPT and DeepSeek During Code Generation Tasks.&rdquo;
-                    <em>SSRN</em> 5206623.
-                    <span class="cite-count">[1]</span>
-                </div>
-
-                <div class="pub-item">
-                    [9] G. Yang, <span class="self">D. Yuan</span>, T. Zhang, Z. Chen.
-                    &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility.&rdquo;
-                    <em>Autom. Softw. Eng.</em>, 33(1):15, 2026.
-                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
-                </div>
-
-                <div class="pub-item">
-                    [10] K. Peng, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
-                    &ldquo;Immersive Intelligent Rendering Optimization for Digital Twin Virtual Campus: A Deep Learning-Driven Adaptive Approach.&rdquo;
-                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
-                </div>
-
-                <div class="pub-item">
-                    [11] M. Chen, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
-                    &ldquo;3D Modeling and Web Visualization of Cloud Campus: A Technical Route Integrating Python Point Cloud Processing, Unity3D, and Three.js.&rdquo;
-                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
-                </div>
-
-                <div class="pub-item">
-                    [12] <span class="self">D. Yuan</span>, G. Liang, S. Liu.
+                    [9] <span class="self">D. Yuan</span>, G. Liang, S. Liu.
                     &ldquo;Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps.&rdquo;
                     <em>Sci. Rep.</em>, 15(1):43787, 2025.
                     [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank">Link</a>]
                 </div>
 
                 <div class="pub-item">
-                    [13] <span class="self">D. Yuan</span>, T. Zhang, H. Jiang.
-                    &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture.&rdquo;
-                    <em>IEEE Trans. Rel.</em>, 2025.
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+                    [10] G. Yang, <span class="self">D. Yuan</span>, T. Zhang, Z. Chen.
+                    &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility.&rdquo;
+                    <em>Autom. Softw. Eng.</em>, 33(1):15, 2026.
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
+                </div>
+
+                <div class="pub-item">
+                    [11] K. Peng, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
+                    &ldquo;Immersive Intelligent Rendering Optimization for Digital Twin Virtual Campus: A Deep Learning-Driven Adaptive Approach.&rdquo;
+                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
+                </div>
+
+                <div class="pub-item">
+                    [12] M. Chen, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
+                    &ldquo;3D Modeling and Web Visualization of Cloud Campus: A Technical Route Integrating Python Point Cloud Processing, Unity3D, and Three.js.&rdquo;
+                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
+                </div>
+
+                <div class="pub-item">
+                    [13] <span class="self">D. Yuan</span>, B. Liu, G. Liang.
+                    &ldquo;A Framework for Comparing Reasoning Between ChatGPT and DeepSeek During Code Generation Tasks.&rdquo;
+                    <em>SSRN</em> 5206623.
+                    <span class="cite-count">[1]</span>
                 </div>
             </div>
         </div>
