@@ -10,8 +10,8 @@
 
         body {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 10.5pt;
-            line-height: 1.35;
+            font-size: 12pt;
+            line-height: 1.4;
             color: #000;
             background: #fff;
             max-width: 190mm;
@@ -19,49 +19,50 @@
             padding: 0 12mm;
         }
 
+        a { color: #1a56db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
         .title-block {
             text-align: center;
-            padding-top: 12mm;
-            padding-bottom: 2mm;
+            padding-top: 10mm;
+            padding-bottom: 3mm;
         }
         .title-block h1 {
-            font-size: 26pt;
+            font-size: 28pt;
             font-weight: bold;
-            letter-spacing: 0.5pt;
-            margin-bottom: 4mm;
+            margin-bottom: 3mm;
             font-variant: small-caps;
         }
         .author-block {
-            font-size: 11pt;
-            margin-bottom: 3mm;
+            font-size: 12pt;
+            margin-bottom: 2mm;
         }
         .author-block .affiliation {
-            font-size: 9pt;
+            font-size: 10pt;
             font-style: italic;
         }
+
         .contact-line {
-            font-size: 9pt;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1mm;
             margin-bottom: 5mm;
         }
-        .contact-line a {
-            color: #1a56db;
-            text-decoration: none;
-        }
-        .contact-line a:hover {
-            text-decoration: underline;
+        .contact-emails { font-size: 10pt; }
+        .contact-emails .sep { margin: 0 2mm; }
+        .contact-profiles { font-size: 9pt; }
+        .contact-profiles .sep { margin: 0 2mm; }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
         }
 
-        .columns {
-            column-count: 2;
-            column-gap: 5mm;
-            column-rule: 0.5pt solid #000;
-            text-align: justify;
-            hyphens: auto;
-        }
-
-        .section { margin-bottom: 4mm; break-inside: avoid; }
+        .section { margin-bottom: 4mm; }
         .section-title {
-            font-size: 10pt;
+            font-size: 11pt;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
@@ -70,56 +71,49 @@
             padding-bottom: 0.5mm;
             letter-spacing: 0.5pt;
         }
-        .section p { margin-bottom: 1mm; }
+        .section p { margin-bottom: 1mm; text-align: justify; }
 
-        .entry { margin-bottom: 2mm; break-inside: avoid; }
+        .entry { margin-bottom: 2mm; }
         .entry-header {
             display: flex;
             justify-content: space-between;
         }
         .entry-title { font-weight: bold; }
         .entry-location { font-style: italic; }
-        .entry-date { white-space: nowrap; font-size: 9pt; padding-left: 2mm; }
+        .entry-date { white-space: nowrap; font-size: 10pt; padding-left: 2mm; }
 
-        ul { list-style: none; padding-left: 3mm; margin-top: 0.5mm; }
-        ul li { font-size: 9pt; margin-bottom: 0.3mm; }
+        ul { list-style: disc; padding-left: 5mm; margin-top: 0.5mm; }
+        ul li { font-size: 10pt; margin-bottom: 0.3mm; }
 
         .pub-item {
             margin-bottom: 1.2mm;
-            font-size: 9pt;
-            text-indent: -6mm;
-            padding-left: 6mm;
+            font-size: 10pt;
+            text-indent: -5mm;
+            padding-left: 5mm;
             text-align: justify;
         }
         .pub-item em { font-style: italic; }
-        .pub-item a {
-            color: #1a56db;
-            text-decoration: none;
-            font-size: 8pt;
-        }
-        .pub-item a:hover { text-decoration: underline; }
+        .pub-item a { font-size: 9pt; }
         .pub-item .self { font-weight: bold; }
         .pub-item .cite-count {
-            font-size: 7.5pt;
+            font-size: 8.5pt;
             color: #666;
             white-space: nowrap;
         }
 
         .footer {
             text-align: center;
-            font-size: 8pt;
-            margin-top: 4mm;
+            font-size: 9pt;
+            margin-top: 6mm;
             padding-top: 1mm;
             border-top: 0.5pt solid #000;
         }
-        .footer a { color: #1a56db; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
 
         @media print {
             body { padding: 0 12mm; }
         }
         @media screen and (max-width: 800px) {
-            .columns { column-count: 1; column-rule: none; }
+            .main-grid { grid-template-columns: 1fr; }
             body { padding: 0 5mm; }
         }
     </style>
@@ -133,234 +127,251 @@
             <span class="affiliation">Guangdong University of Science and Technology, Dongguan, Guangdong, China</span>
         </div>
         <div class="contact-line">
-            <a href="mailto:yuandawei@gdust.edu.cn">yuandawei@gdust.edu.cn</a> &ensp;|&ensp;
-            <a href="mailto:wu.xiguanghua2014@gmail.com">wu.xiguanghua2014@gmail.com</a> &ensp;|&ensp;
-            <a href="https://github.com/davidyuan666" target="_blank">GitHub</a> &ensp;|&ensp;
-            <a href="https://orcid.org/0000-0002-9469-5864" target="_blank">ORCID: 0000-0002-9469-5864</a> &ensp;|&ensp;
-            <a href="https://www.modelscope.cn/profile/davidyuan666?tab=all" target="_blank">ModelScope</a> &ensp;|&ensp;
-            <a href="https://dblp.org/pid/53/10768.html" target="_blank">DBLP</a> &ensp;|&ensp;
-            <a href="https://ieeexplore.ieee.org/author/37089862262" target="_blank">IEEE Xplore</a>
+            <div class="contact-emails">
+                <a href="mailto:yuandawei@gdust.edu.cn">yuandawei@gdust.edu.cn</a>
+                <span class="sep">|</span>
+                <a href="mailto:wu.xiguanghua2014@gmail.com">wu.xiguanghua2014@gmail.com</a>
+            </div>
+            <div class="contact-profiles">
+                <a href="https://github.com/davidyuan666" target="_blank">GitHub</a>
+                <span class="sep">|</span>
+                <a href="https://orcid.org/0000-0002-9469-5864" target="_blank">ORCID</a>
+                <span class="sep">|</span>
+                <a href="https://dblp.org/pid/53/10768.html" target="_blank">DBLP</a>
+                <span class="sep">|</span>
+                <a href="https://ieeexplore.ieee.org/author/37089862262" target="_blank">IEEE Xplore</a>
+                <span class="sep">|</span>
+                <a href="https://www.modelscope.cn/profile/davidyuan666?tab=all" target="_blank">ModelScope</a>
+            </div>
         </div>
     </div>
 
-    <div class="columns">
+    <div class="main-grid">
 
-        <div class="section">
-            <div class="section-title">Research Interests</div>
-            <p>Software engineering, code analysis and maintenance; large language models (LLMs) and hallucination mitigation; smart contract security and blockchain technology; IoT, embedded systems, and real-time systems.</p>
+        <!-- ======== LEFT COLUMN ======== -->
+        <div class="left-col">
+
+            <div class="section">
+                <div class="section-title">Research Interests</div>
+                <p>Software engineering, code analysis and maintenance; LLMs and hallucination mitigation; smart contract security and blockchain; IoT, embedded and real-time systems.</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Ph.D., Artificial Intelligence</span>
+                    </div>
+                    <span class="entry-location">Macau University of Science and Technology</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">M.S., Software Engineering</span>
+                    </div>
+                    <span class="entry-location">University of Science and Technology of China</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">B.S., Network Engineering</span>
+                    </div>
+                    <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Academic Appointments</div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Assistant Professor</span>
+                        <span class="entry-date">Mar 2025&ndash;Present</span>
+                    </div>
+                    <span class="entry-location">Guangdong University of Science and Technology</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Industrial Experience</div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Sr. Algorithm Engineer</span>
+                        <span class="entry-date">May 2024&ndash;Feb 2025</span>
+                    </div>
+                    <span class="entry-location">VeSync, Shenzhen</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Sr. Algorithm Engineer</span>
+                        <span class="entry-date">Jun 2023&ndash;May 2024</span>
+                    </div>
+                    <span class="entry-location">Bitauto, Beijing</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Algorithm Engineer</span>
+                        <span class="entry-date">Sep 2022&ndash;May 2023</span>
+                    </div>
+                    <span class="entry-location">Oujian Development Group, Shanghai</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Software Engineer</span>
+                        <span class="entry-date">Apr&ndash;Sep 2020</span>
+                    </div>
+                    <span class="entry-location">Shanghai Baoneng Information &amp; Technology Co., Ltd, Shanghai</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Software Engineer</span>
+                        <span class="entry-date">Sep 2019&ndash;Mar 2020</span>
+                    </div>
+                    <span class="entry-location">M&amp;G COLIPU, Shanghai</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Software Engineer</span>
+                        <span class="entry-date">Mar 2016&ndash;Aug 2019</span>
+                    </div>
+                    <span class="entry-location">United Imaging Healthcare, Shanghai</span>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Software Engineer Intern</span>
+                        <span class="entry-date">Jun 2013&ndash;Aug 2014</span>
+                    </div>
+                    <span class="entry-location">Uniquesoft LLC, Shanghai</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Teaching</div>
+                <span class="entry-location">Guangdong University of Science and Technology (2025&ndash;Present)</span>
+                <ul>
+                    <li>Operating Systems</li>
+                    <li>JavaEE Framework</li>
+                    <li>Principles of Computer Organization</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Reviewer Service</div>
+                <ul>
+                    <li>Cluster Computing</li>
+                    <li>Journal of Cloud Computing</li>
+                    <li>Scientific Reports</li>
+                    <li>International Journal of Data Science and Analytics</li>
+                    <li>International Journal of Computational Intelligence Systems</li>
+                    <li>International Journal of Networked and Distributed Computing</li>
+                    <li>Automated Software Engineering</li>
+                    <li>Artificial Intelligence Review</li>
+                    <li>Discover Artificial Intelligence</li>
+                    <li>Software Quality Journal</li>
+                    <li>Annals of Mathematics and Artificial Intelligence</li>
+                    <li>The Journal of Navigation</li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="section">
-            <div class="section-title">Education</div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Ph.D., Artificial Intelligence</span>
+        <!-- ======== RIGHT COLUMN: Publications ======== -->
+        <div class="right-col">
+            <div class="section">
+                <div class="section-title">Publications</div>
+
+                <div class="pub-item">
+                    [1] Y. Li, T. Zhang, X. Luo, H. Cai, S. Fang, <span class="self">D. Yuan</span>.
+                    &ldquo;Do Pretrained Language Models Indeed Understand Software Engineering Tasks?&rdquo;
+                    <em>IEEE Trans. Softw. Eng.</em>, 49(10):4639&ndash;4655, 2023.
+                    <span class="cite-count">[30]</span>
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">Macau University of Science and Technology</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">M.S., Software Engineering</span>
+
+                <div class="pub-item">
+                    [2] <span class="self">D. Yuan</span>, X. Wang, Y. Li, T. Zhang.
+                    &ldquo;Optimizing Smart Contract Vulnerability Detection via Multi-Modality Code and Entropy Embedding.&rdquo;
+                    <em>J. Syst. Softw.</em>, 202:111699, 2023.
+                    <span class="cite-count">[26]</span>
+                    [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">University of Science and Technology of China</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">B.S., Network Engineering</span>
+
+                <div class="pub-item">
+                    [3] <span class="self">D. Yuan</span>, S. Fang, T. Zhang, Z. Xu, X. Luo.
+                    &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph.&rdquo;
+                    <em>IEEE Trans. Rel.</em>, 72(2):511&ndash;526, 2022.
+                    <span class="cite-count">[26]</span>
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
-            </div>
-        </div>
 
-        <div class="section">
-            <div class="section-title">Academic Appointments</div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Assistant Professor</span>
-                    <span class="entry-date">Mar 2025&ndash;Present</span>
+                <div class="pub-item">
+                    [4] Y. Li, <span class="self">D. Yuan</span>, T. Zhang, H. Cai, D. Lo, C. Gao, X. Luo, H. Jiang.
+                    &ldquo;Meta-Learning for Multi-Family Android Malware Classification.&rdquo;
+                    <em>ACM Trans. Softw. Eng. Methodol.</em>, 33(7):1&ndash;27, 2024.
+                    <span class="cite-count">[24]</span>
+                    [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">Guangdong University of Science and Technology</span>
-            </div>
-        </div>
 
-        <div class="section">
-            <div class="section-title">Industrial Experience</div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Sr. Algorithm Engineer</span>
-                    <span class="entry-date">May 2024&ndash;Feb 2025</span>
+                <div class="pub-item">
+                    [5] <span class="self">D. Yuan</span>, G. Yang, T. Zhang.
+                    &ldquo;UI2HTML: Utilizing LLM Agents with Chain of Thought to Convert UI into HTML Code.&rdquo;
+                    <em>Autom. Softw. Eng.</em>, 32(2):41, 2025.
+                    <span class="cite-count">[12]</span>
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">VeSync, Shenzhen</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Sr. Algorithm Engineer</span>
-                    <span class="entry-date">Jun 2023&ndash;May 2024</span>
+
+                <div class="pub-item">
+                    [6] <span class="self">D. Yuan</span>, X. Peng, Z. Chen, T. Zhang, R. Lei.
+                    &ldquo;Code Context-Based Reviewer Recommendation.&rdquo;
+                    <em>Front. Comput. Sci.</em>, 19(1):191202, 2025.
+                    <span class="cite-count">[2]</span>
+                    [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">Bitauto, Beijing</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Algorithm Engineer</span>
-                    <span class="entry-date">Sep 2022&ndash;May 2023</span>
+
+                <div class="pub-item">
+                    [7] <span class="self">D. Yuan</span>, G. Liang, T. Li, S. Liu.
+                    &ldquo;Enhancing Queries for Code Generation with Reinforcement Learning.&rdquo;
+                    <em>Sci. Rep.</em>, 15(1):37300, 2025.
+                    <span class="cite-count">[1]</span>
+                    [<a href="https://www.nature.com/articles/s41598-025-21271-4" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">Oujian Development Group, Shanghai</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineer</span>
-                    <span class="entry-date">Apr&ndash;Sep 2020</span>
+
+                <div class="pub-item">
+                    [8] <span class="self">D. Yuan</span>, B. Liu, G. Liang.
+                    &ldquo;A Framework for Comparing Reasoning Between ChatGPT and DeepSeek During Code Generation Tasks.&rdquo;
+                    <em>SSRN</em> 5206623.
+                    <span class="cite-count">[1]</span>
                 </div>
-                <span class="entry-location">Baosight Software, Shanghai</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineer</span>
-                    <span class="entry-date">Sep 2019&ndash;Mar 2020</span>
+
+                <div class="pub-item">
+                    [9] G. Yang, <span class="self">D. Yuan</span>, T. Zhang, Z. Chen.
+                    &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility.&rdquo;
+                    <em>Autom. Softw. Eng.</em>, 33(1):15, 2026.
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
                 </div>
-                <span class="entry-location">M&amp;G COLIPU, Shanghai</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineer</span>
-                    <span class="entry-date">Mar 2016&ndash;Aug 2019</span>
+
+                <div class="pub-item">
+                    [10] K. Peng, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
+                    &ldquo;Immersive Intelligent Rendering Optimization for Digital Twin Virtual Campus: A Deep Learning-Driven Adaptive Approach.&rdquo;
+                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
                 </div>
-                <span class="entry-location">United Imaging Healthcare, Shanghai</span>
-            </div>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Software Engineer Intern</span>
-                    <span class="entry-date">Jun 2013&ndash;Aug 2014</span>
+
+                <div class="pub-item">
+                    [11] M. Chen, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
+                    &ldquo;3D Modeling and Web Visualization of Cloud Campus: A Technical Route Integrating Python Point Cloud Processing, Unity3D, and Three.js.&rdquo;
+                    <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
                 </div>
-                <span class="entry-location">Uniquesoft LLC, Shanghai</span>
-            </div>
-        </div>
 
-        <div class="section">
-            <div class="section-title">Teaching</div>
-            <span class="entry-location">Guangdong University of Science and Technology (2025&ndash;Present)</span>
-            <ul>
-                <li>Operating Systems</li>
-                <li>JavaEE Framework</li>
-                <li>Principles of Computer Organization</li>
-            </ul>
-        </div>
+                <div class="pub-item">
+                    [12] <span class="self">D. Yuan</span>, G. Liang, S. Liu.
+                    &ldquo;Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps.&rdquo;
+                    <em>Sci. Rep.</em>, 15(1):43787, 2025.
+                    [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank">Link</a>]
+                </div>
 
-        <div class="section">
-            <div class="section-title">Reviewer Service</div>
-            <ul>
-                <li>Cluster Computing</li>
-                <li>Journal of Cloud Computing</li>
-                <li>Scientific Reports</li>
-                <li>International Journal of Data Science and Analytics</li>
-                <li>International Journal of Computational Intelligence Systems</li>
-                <li>International Journal of Networked and Distributed Computing</li>
-                <li>Automated Software Engineering</li>
-                <li>Artificial Intelligence Review</li>
-                <li>Discover Artificial Intelligence</li>
-                <li>Software Quality Journal</li>
-                <li>Annals of Mathematics and Artificial Intelligence</li>
-                <li>The Journal of Navigation</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Publications</div>
-
-            <div class="pub-item">
-                [1] Y. Li, T. Zhang, X. Luo, H. Cai, S. Fang, <span class="self">D. Yuan</span>.
-                &ldquo;Do Pretrained Language Models Indeed Understand Software Engineering Tasks?&rdquo;
-                <em>IEEE Trans. Softw. Eng.</em>, 49(10):4639&ndash;4655, 2023.
-                <span class="cite-count">[30]</span>
-                [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [2] <span class="self">D. Yuan</span>, X. Wang, Y. Li, T. Zhang.
-                &ldquo;Optimizing Smart Contract Vulnerability Detection via Multi-Modality Code and Entropy Embedding.&rdquo;
-                <em>J. Syst. Softw.</em>, 202:111699, 2023.
-                <span class="cite-count">[26]</span>
-                [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [3] <span class="self">D. Yuan</span>, S. Fang, T. Zhang, Z. Xu, X. Luo.
-                &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph.&rdquo;
-                <em>IEEE Trans. Rel.</em>, 72(2):511&ndash;526, 2022.
-                <span class="cite-count">[26]</span>
-                [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [4] Y. Li, <span class="self">D. Yuan</span>, T. Zhang, H. Cai, D. Lo, C. Gao, X. Luo, H. Jiang.
-                &ldquo;Meta-Learning for Multi-Family Android Malware Classification.&rdquo;
-                <em>ACM Trans. Softw. Eng. Methodol.</em>, 33(7):1&ndash;27, 2024.
-                <span class="cite-count">[24]</span>
-                [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [5] <span class="self">D. Yuan</span>, G. Yang, T. Zhang.
-                &ldquo;UI2HTML: Utilizing LLM Agents with Chain of Thought to Convert UI into HTML Code.&rdquo;
-                <em>Autom. Softw. Eng.</em>, 32(2):41, 2025.
-                <span class="cite-count">[12]</span>
-                [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [6] <span class="self">D. Yuan</span>, X. Peng, Z. Chen, T. Zhang, R. Lei.
-                &ldquo;Code Context-Based Reviewer Recommendation.&rdquo;
-                <em>Front. Comput. Sci.</em>, 19(1):191202, 2025.
-                <span class="cite-count">[2]</span>
-                [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [7] <span class="self">D. Yuan</span>, G. Liang, T. Li, S. Liu.
-                &ldquo;Enhancing Queries for Code Generation with Reinforcement Learning.&rdquo;
-                <em>Sci. Rep.</em>, 15(1):37300, 2025.
-                <span class="cite-count">[1]</span>
-                [<a href="https://www.nature.com/articles/s41598-025-21271-4" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [8] <span class="self">D. Yuan</span>, B. Liu, G. Liang.
-                &ldquo;A Framework for Comparing Reasoning Between ChatGPT and DeepSeek During Code Generation Tasks.&rdquo;
-                <em>SSRN</em> 5206623.
-                <span class="cite-count">[1]</span>
-            </div>
-
-            <div class="pub-item">
-                [9] G. Yang, <span class="self">D. Yuan</span>, T. Zhang, Z. Chen.
-                &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility.&rdquo;
-                <em>Autom. Softw. Eng.</em>, 33(1):15, 2026.
-                [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [10] K. Peng, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
-                &ldquo;Immersive Intelligent Rendering Optimization for Digital Twin Virtual Campus: A Deep Learning-Driven Adaptive Approach.&rdquo;
-                <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
-            </div>
-
-            <div class="pub-item">
-                [11] M. Chen, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
-                &ldquo;3D Modeling and Web Visualization of Cloud Campus: A Technical Route Integrating Python Point Cloud Processing, Unity3D, and Three.js.&rdquo;
-                <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
-            </div>
-
-            <div class="pub-item">
-                [12] <span class="self">D. Yuan</span>, G. Liang, S. Liu.
-                &ldquo;Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps.&rdquo;
-                <em>Sci. Rep.</em>, 15(1):43787, 2025.
-                [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank">Link</a>]
-            </div>
-
-            <div class="pub-item">
-                [13] <span class="self">D. Yuan</span>, T. Zhang, H. Jiang.
-                &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture.&rdquo;
-                <em>IEEE Trans. Rel.</em>, 2025.
-                [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+                <div class="pub-item">
+                    [13] <span class="self">D. Yuan</span>, T. Zhang, H. Jiang.
+                    &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture.&rdquo;
+                    <em>IEEE Trans. Rel.</em>, 2025.
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+                </div>
             </div>
         </div>
 
