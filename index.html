@@ -4,401 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawei Yuan</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            max-width: 900px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 9pt;
+            line-height: 1.35;
+            color: #000;
+            background: #fff;
+            max-width: 190mm;
             margin: 0 auto;
-            padding: 40px 60px;
-            line-height: 1.7;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            padding: 0 12mm;
         }
-        .header {
+
+        /* ── IEEE-style title block ── */
+        .title-block {
             text-align: center;
-            margin-bottom: 50px;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding-top: 12mm;
+            padding-bottom: 2mm;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-weight: 700;
-            color: #1a202c;
-            letter-spacing: -1px;
+        .title-block h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            letter-spacing: 0.5pt;
+            margin-bottom: 4mm;
+            font-variant: small-caps;
         }
-        .contact-info {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+        .author-block {
+            font-size: 10pt;
+            margin-bottom: 3mm;
         }
-        .contact-info a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            min-width: 180px;
-            background: #4a5568;
-            color: white;
+        .author-block .affiliation {
+            font-size: 8pt;
+            font-style: italic;
+        }
+        .contact-line {
+            font-size: 8pt;
+            margin-bottom: 5mm;
+        }
+        .contact-line a {
+            color: #000;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        .contact-info a:hover {
-            transform: translateY(-3px);
-            background: #2d3748;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        /* ── IEEE two-column layout ── */
+        .columns {
+            column-count: 2;
+            column-gap: 6mm;
+            column-rule: 0.5pt solid #000;
+            text-align: justify;
+            hyphens: auto;
         }
-        .section {
-            margin-bottom: 35px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
+
+        /* ── Sections ── */
+        .section { margin-bottom: 4mm; break-inside: avoid; }
         .section-title {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #2d3748;
-            border-bottom: 3px solid #4299e1;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            font-size: 9pt;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            text-align: center;
+            border-bottom: 0.5pt solid #000;
+            margin-bottom: 1.5mm;
+            padding-bottom: 0.5mm;
+            letter-spacing: 0.5pt;
         }
-        .entry {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-left: 3px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-        .entry:hover {
-            border-left-color: #4299e1;
-            background: #f7fafc;
-            padding-left: 20px;
-        }
+        .section p { margin-bottom: 1mm; }
+
+        /* ── Entry items ── */
+        .entry { margin-bottom: 2mm; break-inside: avoid; }
         .entry-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
         }
-        .entry-title {
-            font-weight: 600;
-            color: #2d3748;
-            font-size: 1.05em;
+        .entry-title { font-weight: bold; }
+        .entry-location { font-style: italic; }
+        .entry-date { white-space: nowrap; font-size: 8pt; padding-left: 2mm; }
+
+        ul { list-style: none; padding-left: 0; margin-top: 0.5mm; }
+        ul li { font-size: 8pt; margin-bottom: 0.3mm; padding-left: 3mm; text-indent: -3mm; }
+        ul li:before { content: "—"; margin-right: 1mm; }
+
+        /* ── Publications ── */
+        .pub-item { margin-bottom: 1.5mm; font-size: 8.5pt; text-indent: -4mm; padding-left: 4mm; }
+        .pub-item em { font-style: italic; }
+        .pub-item a { color: #000; text-decoration: none; font-size: 7.5pt; }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            font-size: 7pt;
+            margin-top: 4mm;
+            padding-top: 1mm;
+            border-top: 0.5pt solid #000;
         }
-        .entry-location {
-            font-style: italic;
-            color: #4a5568;
-            font-size: 0.95em;
+
+        @media print {
+            body { padding: 0 12mm; }
         }
-        .entry-date {
-            color: #718096;
-            white-space: nowrap;
-            padding-left: 20px;
-            font-weight: 500;
-            font-size: 0.9em;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        ul li {
-            padding: 8px 0 8px 25px;
-            position: relative;
-            color: #4a5568;
-        }
-        ul li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #4299e1;
-            font-weight: bold;
-        }
-        .publications-list li {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #f7fafc;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .publications-list li:before {
-            content: none;
-        }
-        .publications-list li:hover {
-            background: #edf2f7;
-            transform: translateX(5px);
-        }
-        .publications-list em {
-            font-style: italic;
-            color: #2c5282;
-            font-weight: 500;
-        }
-        .publications-list a {
-            color: #3182ce;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        .publications-list a:hover {
-            color: #2c5282;
+        @media screen and (max-width: 800px) {
+            .columns { column-count: 1; column-rule: none; }
+            body { padding: 0 5mm; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <div class="title-block">
         <h1>Dawei Yuan</h1>
-        <div class="contact-info">
-            <a href="mailto:yuandawei@gdust.edu.cn">📧 yuandawei@gdust.edu.cn</a>
-            <a href="https://github.com/davidyuan666" target="_blank">💻 GitHub</a>
-            <a href="https://orcid.org/0000-0002-9469-5864" target="_blank">🎓 ORCID</a>
-            <a href="https://www.modelscope.cn/profile/davidyuan666" target="_blank">🤖 ModelScope</a>
+        <div class="author-block">
+            Assistant Professor<br>
+            <span class="affiliation">Guangdong University of Science and Technology, Dongguan, Guangdong, China</span>
+        </div>
+        <div class="contact-line">
+            yuandawei@gdust.edu.cn &ensp;|&ensp;
+            <a href="https://github.com/davidyuan666">GitHub</a> &ensp;|&ensp;
+            <a href="https://orcid.org/0000-0002-9469-5864">ORCID: 0000-0002-9469-5864</a>
         </div>
     </div>
 
-    <div class="section">
-        <h2 class="section-title">Research Interests</h2>
-        <ul>
-            <li>Code Analysis, Software Testing, and Maintenance</li>
-            <li>Large Language Models (LLM), Large Language Model Hallucinations</li>
-            <li>Smart Contract Security and Blockchain Technology</li>
-            <li>IoT, Embedded Systems, and Real-time Systems</li>
-        </ul>
-    </div>
+    <div class="columns">
 
-    <div class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Ph.D. in Artificial Intelligence</span><br>
-                    <span class="entry-location">Macau University of Science and Technology</span>
-                </div>
-            </div>
+        <!-- Research Interests -->
+        <div class="section">
+            <div class="section-title">Research Interests</div>
+            <p>Software engineering, code analysis and maintenance; large language models (LLMs) and hallucination mitigation; smart contract security and blockchain technology; IoT, embedded systems, and real-time systems.</p>
         </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Master of Software Engineering</span><br>
-                    <span class="entry-location">University of Science and Technology of China</span>
-                </div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Bachelor of Network Engineering</span><br>
-                    <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="section">
-        <h2 class="section-title">Academic Experience</h2>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Assistant Professor</span><br>
-                    <span class="entry-location">Guangdong University of Science and Technology, Dongguan, Guangdong</span>
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Ph.D., Artificial Intelligence</span>
                 </div>
-                <div class="entry-date">Mar 2025 – Present</div>
+                <span class="entry-location">Macau University of Science and Technology</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">M.S., Software Engineering</span>
+                </div>
+                <span class="entry-location">University of Science and Technology of China</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">B.S., Network Engineering</span>
+                </div>
+                <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
             </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h2 class="section-title">Industrial Experience</h2>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Senior Algorithm Engineer</span><br>
-                    <span class="entry-location">VeSync, Shenzhen</span>
+        <!-- Academic Experience -->
+        <div class="section">
+            <div class="section-title">Academic Appointments</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Assistant Professor</span>
+                    <span class="entry-date">Mar 2025&ndash;Present</span>
                 </div>
-                <div class="entry-date">May 2024 – Feb 2025</div>
+                <span class="entry-location">Guangdong University of Science and Technology</span>
             </div>
         </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Senior Algorithm Engineer</span><br>
-                    <span class="entry-location">Beijing Bitauto Information Technology Co., Ltd, Beijing</span>
-                </div>
-                <div class="entry-date">June 2023 – May 2024</div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Algorithm Engineer</span><br>
-                    <span class="entry-location">Shanghai Oujian Development Group Co., Ltd, Shanghai</span>
-                </div>
-                <div class="entry-date">Sep 2022 – May 2023</div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Software Engineer</span><br>
-                    <span class="entry-location">Shanghai Baosight Software Co., Ltd, Shanghai</span>
-                </div>
-                <div class="entry-date">Apr 2020 – Sep 2020</div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Software Engineer</span><br>
-                    <span class="entry-location">M&G COLIPU, Shanghai</span>
-                </div>
-                <div class="entry-date">Sep 2019 – Mar 2020</div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Software Engineer</span><br>
-                    <span class="entry-location">United Imaging Healthcare, Shanghai</span>
-                </div>
-                <div class="entry-date">Mar 2016 – Aug 2019</div>
-            </div>
-        </div>
-        <div class="entry">
-            <div class="entry-header">
-                <div>
-                    <span class="entry-title">Software Engineer Internship</span><br>
-                    <span class="entry-location">Uniquesoft LLC, Shanghai</span>
-                </div>
-                <div class="entry-date">Jun 2013 – Aug 2014</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="section">
-        <h2 class="section-title">Teaching Experience</h2>
-        <div class="entry">
-             <div class="entry-header">
-                <div>
-                    <span class="entry-location">Guangdong University of Science and Technology</span>
+        <!-- Industrial Experience -->
+        <div class="section">
+            <div class="section-title">Industrial Experience</div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Sr. Algorithm Engineer</span>
+                    <span class="entry-date">May 2024&ndash;Feb 2025</span>
                 </div>
-                <div class="entry-date">2025 – Present</div>
+                <span class="entry-location">VeSync, Shenzhen</span>
             </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Sr. Algorithm Engineer</span>
+                    <span class="entry-date">Jun 2023&ndash;May 2024</span>
+                </div>
+                <span class="entry-location">Bitauto, Beijing</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Algorithm Engineer</span>
+                    <span class="entry-date">Sep 2022&ndash;May 2023</span>
+                </div>
+                <span class="entry-location">Oujian Development Group, Shanghai</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineer</span>
+                    <span class="entry-date">Apr&ndash;Sep 2020</span>
+                </div>
+                <span class="entry-location">Baosight Software, Shanghai</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineer</span>
+                    <span class="entry-date">Sep 2019&ndash;Mar 2020</span>
+                </div>
+                <span class="entry-location">M&amp;G COLIPU, Shanghai</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineer</span>
+                    <span class="entry-date">Mar 2016&ndash;Aug 2019</span>
+                </div>
+                <span class="entry-location">United Imaging Healthcare, Shanghai</span>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Software Engineer Intern</span>
+                    <span class="entry-date">Jun 2013&ndash;Aug 2014</span>
+                </div>
+                <span class="entry-location">Uniquesoft LLC, Shanghai</span>
+            </div>
+        </div>
+
+        <!-- Teaching -->
+        <div class="section">
+            <div class="section-title">Teaching</div>
+            <span class="entry-location">Guangdong University of Science and Technology (2025&ndash;Present)</span>
             <ul>
                 <li>Operating Systems</li>
                 <li>JavaEE Framework</li>
                 <li>Principles of Computer Organization</li>
             </ul>
         </div>
+
+        <!-- Reviewer Service -->
+        <div class="section">
+            <div class="section-title">Reviewer Service</div>
+            <p style="font-size:8pt;">
+                Cluster Computing; Journal of Cloud Computing; Scientific Reports; Int. J. Data Science and Analytics; Int. J. Computational Intelligence Systems; Int. J. Networked and Distributed Computing; Automated Software Engineering; Artificial Intelligence Review; Discover Artificial Intelligence; Software Quality Journal; Annals of Mathematics and Artificial Intelligence; The Journal of Navigation.
+            </p>
+        </div>
+
+        <!-- Publications -->
+        <div class="section">
+            <div class="section-title">Selected Publications</div>
+            <div class="pub-item">
+                &ldquo;Do Pretrained Language Models Indeed Understand Software Engineering Tasks?&rdquo; <em>IEEE Trans. Software Eng. (TSE)</em>, 2023. [<a href="https://ieeexplore.ieee.org/abstract/document/10232920">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information From Intermediate Code-Based Graph,&rdquo; <em>IEEE Trans. Reliability (TR)</em>, 2023. [<a href="https://ieeexplore.ieee.org/abstract/document/9792461">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Optimizing Smart Contract Vulnerability Detection via Multi-Modality Code and Entropy Embedding,&rdquo; <em>J. Systems and Software (JSS)</em>, 2023. [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Meta-Learning for Multi-Family Android Malware Classification,&rdquo; <em>ACM Trans. Software Eng. and Methodology (TOSEM)</em>, 2024. [<a href="https://dl.acm.org/doi/full/10.1145/3664806">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Code Context-Based Reviewer Recommendation,&rdquo; <em>Frontiers of Computer Science (FCS)</em>, 2023. [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture,&rdquo; <em>IEEE Trans. Reliability (TR)</em>, 2025. [<a href="https://ieeexplore.ieee.org/abstract/document/10909995">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;UI2HTML: Utilizing LLM Agents with Chain of Thought to Convert UI into HTML Code,&rdquo; <em>Automated Software Engineering</em>, 2025. [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility,&rdquo; <em>Automated Software Engineering</em>, 2025. [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Enhancing Queries for Code Generation with Reinforcement Learning,&rdquo; <em>Scientific Reports</em>, 2025. [<a href="https://www.nature.com/articles/s41598-025-21271-4">Link</a>]
+            </div>
+            <div class="pub-item">
+                &ldquo;Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps,&rdquo; <em>Scientific Reports</em>, 2025. [<a href="https://www.nature.com/articles/s41598-025-27497-6">Link</a>]
+            </div>
+        </div>
+
     </div>
 
-    <div class="section">
-        <h2 class="section-title">Publications</h2>
-        <ul class="publications-list">
-            <li>Do Pretrained Language Models Indeed Understand Software Engineering Tasks? <br>
-                <em>IEEE Transactions on Software Engineering (TSE)</em>, 2023
-                [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]
-            </li>
-            <li>Java Code Clone Detection by Exploiting Semantic and Syntax Information From Intermediate Code-Based Graph<br>
-                <em>IEEE Transactions on Reliability (TR)</em>, 2023
-                [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
-            </li>
-            <li>Optimizing smart contract vulnerability detection via multi-modality code and entropy embedding<br>
-                <em>Journal of Systems and Software (JSS)</em>, 2023
-                [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
-            </li>
-            <li>Meta-Learning for Multi-Family Android Malware Classification<br>
-                <em>ACM Transactions on Software Engineering and Methodology (TOSEM)</em>, 2024
-                [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]
-            </li>
-            <li>Code Context-Based Reviewer Recommendation<br>
-                <em>Frontiers of Computer Science (FCS)</em>, 2023
-                [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]
-            </li>
-            <li>UNA: Improving Automated PL-NL System by A Unified Neural Architecture<br>
-                <em>IEEE Transactions on Reliability (TR)</em>, 2025
-                [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
-            </li>
-            <li>UI2HTML: utilizing LLM agents with chain of thought to convert UI into HTML code<br>
-                <em>Automated Software Engineering</em>, 2025
-                [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]
-            </li>
-            <li>A sign language to SQL query translation system for enhancing database accessibility<br>
-                <em>Automated Software Engineering</em>, 2025
-                [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
-            </li>
-            <li>Enhancing Queries for Code Generation with Reinforcement Learning<br>
-                <em>Scientific Reports</em>, 2025
-                [<a href="https://www.nature.com/articles/s41598-025-21271-4" target="_blank">Link</a>]
-            </li>
-            <li>Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps<br>
-                <em>Scientific Reports</em>, 2025
-                [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank">Link</a>]
-            </li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">Reviewer Service</h2>
-        <ul>
-            <li>Cluster Computing</li>
-            <li>Journal of Cloud Computing</li>
-            <li>Scientific Reports</li>
-            <li>International Journal of Data Science and Analytics</li>
-            <li>International Journal of Computational Intelligence Systems</li>
-            <li>International Journal of Networked and Distributed Computing</li>
-            <li>Automated Software Engineering</li>
-            <li>Artificial Intelligence Review</li>
-            <li>Discover Artificial Intelligence</li>
-            <li>Software Quality Journal</li>
-            <li>Annals of Mathematics and Artificial Intelligence</li>
-            <li>The Journal of Navigation</li>
-        </ul>
+    <div class="footer">
+        Updated May 2025 &ensp;&bull;&ensp; <a href="https://davidyuan666.github.io">davidyuan666.github.io</a>
     </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
