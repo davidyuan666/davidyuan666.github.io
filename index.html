@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dawei Yuan — Assistant Professor, Guangdong University of Science and Technology. Research interests, publications, teaching and professional service.">
     <title>Dawei Yuan</title>
     <style>
-        @page { size: A4; margin: 0; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -14,92 +14,90 @@
             line-height: 1.4;
             color: #000;
             background: #fff;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 10px;
+            padding: 0 16px 24px;
         }
 
         a { color: #1a56db; text-decoration: none; }
         a:hover { text-decoration: underline; }
 
-        .title-block {
+        /* ---------- header ---------- */
+        header {
             text-align: center;
-            padding-top: 10mm;
-            padding-bottom: 3mm;
+            padding: 28px 0 10px;
         }
-        .title-block h1 {
-            font-size: 28pt;
+        header h1 {
+            font-size: 26pt;
             font-weight: bold;
-            margin-bottom: 3mm;
             font-variant: small-caps;
+            margin-bottom: 6px;
         }
-        .author-block {
-            font-size: 12pt;
-            margin-bottom: 2mm;
-        }
-        .author-block .affiliation {
+        .position { font-size: 12pt; }
+        .affiliation {
             font-size: 10pt;
             font-style: italic;
+            margin-top: 2px;
         }
-
-        .contact-line {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1mm;
-            margin-bottom: 5mm;
+        .contact {
+            margin-top: 10px;
+            font-size: 10.5pt;
+            line-height: 1.6;
         }
-        .contact-emails { font-size: 10pt; }
-        .contact-emails .sep { margin: 0 2mm; }
-        .contact-profiles { font-size: 9pt; }
-        .contact-profiles .sep { margin: 0 2mm; }
+        .contact .sep { margin: 0 6px; color: #888; }
+        .profiles { font-size: 10pt; }
 
+        /* ---------- body ---------- */
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5mm;
+            gap: 0 28px;
+            align-items: start;
+            margin-top: 18px;
         }
 
-        .section { margin-bottom: 4mm; }
+        section { margin-bottom: 16px; }
         .section-title {
             font-size: 11pt;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
             border-bottom: 0.5pt solid #000;
-            margin-bottom: 1.5mm;
-            padding-bottom: 0.5mm;
+            margin-bottom: 6px;
+            padding-bottom: 2px;
             letter-spacing: 0.5pt;
         }
-        .section p { margin-bottom: 1mm; text-align: justify; }
+        section p { margin-bottom: 4px; }
 
-        .entry { margin-bottom: 2mm; }
+        .entry { margin-bottom: 8px; }
         .entry-header {
             display: flex;
             justify-content: space-between;
+            gap: 12px;
         }
         .entry-title { font-weight: bold; }
-        .entry-location { font-style: italic; }
-        .entry-date { white-space: nowrap; font-size: 10pt; padding-left: 2mm; }
+        .entry-location { font-style: italic; display: block; }
+        .entry-date { white-space: nowrap; font-size: 10pt; }
 
-        ul { list-style: disc; padding-left: 5mm; margin-top: 0.5mm; }
-        ul li { font-size: 10pt; margin-bottom: 0.3mm; }
-        ul.two-col { columns: 2; column-gap: 6mm; }
-        ul.two-col li { break-inside: avoid; }
+        ul { list-style: disc; padding-left: 18px; margin-top: 2px; }
+        ul li { font-size: 10pt; margin-bottom: 1px; }
+        ul.two-col { columns: 2; column-gap: 20px; }
+        ul.three-col { columns: 3; column-gap: 20px; }
+        ul.two-col li, ul.three-col li { break-inside: avoid; }
 
+        /* ---------- publications ---------- */
         .pub-subtitle {
             font-size: 10.5pt;
             font-weight: bold;
             font-variant: small-caps;
             letter-spacing: 0.3pt;
-            margin: 2mm 0 1mm;
+            margin: 8px 0 4px;
         }
-
         .pub-item {
-            margin-bottom: 1.2mm;
+            margin-bottom: 5px;
             font-size: 10pt;
-            text-indent: -5mm;
-            padding-left: 5mm;
+            text-indent: -18px;
+            padding-left: 18px;
             text-align: justify;
         }
         .pub-item em { font-style: italic; }
@@ -111,65 +109,71 @@
             white-space: nowrap;
         }
 
-        .footer {
+        /* ---------- service ---------- */
+        .wide { margin-top: 4px; }
+
+        footer {
             text-align: center;
             font-size: 9pt;
-            margin-top: 6mm;
-            padding-top: 1mm;
+            color: #555;
+            margin-top: 24px;
+            padding-top: 6px;
             border-top: 0.5pt solid #000;
         }
 
         @media print {
-            body { max-width: 210mm; padding: 0 2mm; }
+            @page { size: A4; margin: 12mm; }
+            body { max-width: none; padding: 0; font-size: 11pt; }
+            a { color: #000; }
+            .main-grid { gap: 0 10mm; break-inside: auto; }
+            .entry, .pub-item, li { break-inside: avoid; }
+            header { padding-top: 0; }
+            footer { break-inside: avoid; }
         }
         @media screen and (max-width: 800px) {
-            .main-grid { grid-template-columns: 1fr; }
-            body { padding: 0 5mm; }
+            .main-grid { grid-template-columns: 1fr; gap: 0; }
+            ul.three-col { columns: 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="title-block">
+    <header>
         <h1>Dawei Yuan</h1>
-        <!-- <div class="author-block">
-            Assistant Professor<br>
-            <span class="affiliation">Guangdong University of Science and Technology, Dongguan, Guangdong, China</span>
-        </div> -->
-        <div class="contact-line">
-            <div class="contact-emails">
+        <div class="position">Assistant Professor</div>
+        <div class="affiliation">Guangdong University of Science and Technology, Dongguan, Guangdong, China</div>
+        <div class="contact">
+            <div>
                 <a href="mailto:yuandawei@gdust.edu.cn">yuandawei@gdust.edu.cn</a>
                 <span class="sep">|</span>
                 <a href="mailto:wu.xiguanghua2014@gmail.com">wu.xiguanghua2014@gmail.com</a>
             </div>
-            <div class="contact-profiles">
-                <a href="https://github.com/davidyuan666" target="_blank">GitHub</a>
+            <div class="profiles">
+                <a href="https://github.com/davidyuan666" target="_blank" rel="noopener">GitHub</a>
                 <span class="sep">|</span>
-                <a href="https://orcid.org/0000-0002-9469-5864" target="_blank">ORCID</a>
+                <a href="https://orcid.org/0000-0002-9469-5864" target="_blank" rel="noopener">ORCID</a>
                 <span class="sep">|</span>
-                <a href="https://dblp.org/pid/53/10768.html" target="_blank">DBLP</a>
-                <!-- <span class="sep">|</span>
-                <a href="https://ieeexplore.ieee.org/author/37089862262" target="_blank">IEEE Xplore</a> -->
+                <a href="https://dblp.org/pid/53/10768.html" target="_blank" rel="noopener">DBLP</a>
                 <span class="sep">|</span>
-                <a href="https://www.modelscope.cn/profile/davidyuan666?tab=all" target="_blank">ModelScope</a>
+                <a href="https://www.modelscope.cn/profile/davidyuan666?tab=all" target="_blank" rel="noopener">ModelScope</a>
                 <span class="sep">|</span>
-                <a href="https://www.linkedin.com/in/dawei-yuan-5b46a8b2" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/dawei-yuan-5b46a8b2" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="main-grid">
 
         <!-- ======== LEFT COLUMN ======== -->
         <div class="left-col">
 
-            <div class="section">
-                <div class="section-title">Research Interests</div>
+            <section>
+                <h2 class="section-title">Research Interests</h2>
                 <p>Protein Design; Biological Computing</p>
-            </div>
+            </section>
 
-            <div class="section">
-                <div class="section-title">Education</div>
+            <section>
+                <h2 class="section-title">Education</h2>
                 <div class="entry">
                     <div class="entry-header">
                         <span class="entry-title">Ph.D., Artificial Intelligence</span>
@@ -188,10 +192,10 @@
                     </div>
                     <span class="entry-location">Nanjing University of Posts and Telecommunications</span>
                 </div>
-            </div>
+            </section>
 
-            <div class="section">
-                <div class="section-title">Academic Appointments</div>
+            <section>
+                <h2 class="section-title">Academic Appointments</h2>
                 <div class="entry">
                     <div class="entry-header">
                         <span class="entry-title">Assistant Professor</span>
@@ -199,10 +203,10 @@
                     </div>
                     <span class="entry-location">Guangdong University of Science and Technology</span>
                 </div>
-            </div>
+            </section>
 
-            <div class="section">
-                <div class="section-title">Industrial Experience</div>
+            <section>
+                <h2 class="section-title">Industrial Experience</h2>
                 <div class="entry">
                     <div class="entry-header">
                         <span class="entry-title">Sr. Algorithm Engineer</span>
@@ -252,10 +256,10 @@
                     </div>
                     <span class="entry-location">Uniquesoft LLC, Shanghai</span>
                 </div>
-            </div>
+            </section>
 
-            <div class="section">
-                <div class="section-title">Teaching</div>
+            <section>
+                <h2 class="section-title">Teaching</h2>
                 <span class="entry-location">Guangdong University of Science and Technology (2025&ndash;Present)</span>
                 <ul class="two-col">
                     <li>Operating Systems</li>
@@ -265,37 +269,14 @@
                     <li>Machine Learning</li>
                     <li>Recommender Systems</li>
                 </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Reviewer Service</div>
-                <ul class="two-col">
-                    <li>Cluster Computing</li>
-                    <li>Journal of Cloud Computing</li>
-                    <li>Scientific Reports</li>
-                    <li>International Journal of Data Science and Analytics</li>
-                    <li>International Journal of Computational Intelligence Systems</li>
-                    <li>International Journal of Networked and Distributed Computing</li>
-                    <li>International Journal on Document Analysis and Recognition</li>
-                    <li>International Journal of Machine Learning and Cybernetics</li>
-                    <li>Automated Software Engineering</li>
-                    <li>Artificial Intelligence Review</li>
-                    <li>Discover Artificial Intelligence</li>
-                    <li>Discover Computing</li>
-                    <li>Software Quality Journal</li>
-                    <li>Annals of Mathematics and Artificial Intelligence</li>
-                    <li>The Journal of Navigation</li>
-                    <li>Machine Learning</li>
-                    <li>Pattern Analysis and Applications</li>
-                </ul>
-            </div>
+            </section>
 
         </div>
 
         <!-- ======== RIGHT COLUMN: Publications ======== -->
         <div class="right-col">
-            <div class="section">
-                <div class="section-title">Publications</div>
+            <section>
+                <h2 class="section-title">Publications</h2>
 
                 <div class="pub-subtitle">Journal</div>
 
@@ -304,7 +285,7 @@
                     &ldquo;Java Code Clone Detection by Exploiting Semantic and Syntax Information from Intermediate Code-Based Graph.&rdquo;
                     <em>IEEE Trans. Rel.</em>, 72(2):511&ndash;526, 2022.
                     <span class="cite-count">[26]</span>
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank">Link</a>]
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/9792461" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -312,7 +293,7 @@
                     &ldquo;Do Pretrained Language Models Indeed Understand Software Engineering Tasks?&rdquo;
                     <em>IEEE Trans. Softw. Eng.</em>, 49(10):4639&ndash;4655, 2023.
                     <span class="cite-count">[30]</span>
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank">Link</a>]
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/10232920" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -320,7 +301,7 @@
                     &ldquo;Optimizing Smart Contract Vulnerability Detection via Multi-Modality Code and Entropy Embedding.&rdquo;
                     <em>J. Syst. Softw.</em>, 202:111699, 2023.
                     <span class="cite-count">[26]</span>
-                    [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank">Link</a>]
+                    [<a href="https://www.sciencedirect.com/science/article/pii/S0164121223000948" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -328,14 +309,14 @@
                     &ldquo;Meta-Learning for Multi-Family Android Malware Classification.&rdquo;
                     <em>ACM Trans. Softw. Eng. Methodol.</em>, 33(7):1&ndash;27, 2024.
                     <span class="cite-count">[24]</span>
-                    [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank">Link</a>]
+                    [<a href="https://dl.acm.org/doi/full/10.1145/3664806" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
                     [5] <span class="self">D. Yuan</span>, T. Zhang, H. Jiang.
                     &ldquo;UNA: Improving Automated PL-NL System by A Unified Neural Architecture.&rdquo;
                     <em>IEEE Trans. Rel.</em>, 2025.
-                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank">Link</a>]
+                    [<a href="https://ieeexplore.ieee.org/abstract/document/10909995" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -343,7 +324,7 @@
                     &ldquo;UI2HTML: Utilizing LLM Agents with Chain of Thought to Convert UI into HTML Code.&rdquo;
                     <em>Autom. Softw. Eng.</em>, 32(2):41, 2025.
                     <span class="cite-count">[12]</span>
-                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank">Link</a>]
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00509-5" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -351,7 +332,7 @@
                     &ldquo;Code Context-Based Reviewer Recommendation.&rdquo;
                     <em>Front. Comput. Sci.</em>, 19(1):191202, 2025.
                     <span class="cite-count">[2]</span>
-                    [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank">Link</a>]
+                    [<a href="https://link.springer.com/article/10.1007/s11704-023-3256-9" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -359,28 +340,28 @@
                     &ldquo;Enhancing Queries for Code Generation with Reinforcement Learning.&rdquo;
                     <em>Sci. Rep.</em>, 15(1):37300, 2025.
                     <span class="cite-count">[1]</span>
-                    [<a href="https://www.nature.com/articles/s41598-025-21271-4" target="_blank">Link</a>]
+                    [<a href="https://www.nature.com/articles/s41598-025-21271-4" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
                     [9] <span class="self">D. Yuan*</span>, G. Liang, S. Liu.
                     &ldquo;Qwen TextCNN and BERT Models for Enhanced Multilabel News Classification in Mobile Apps.&rdquo;
                     <em>Sci. Rep.</em>, 15(1):43787, 2025.
-                    [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank">Link</a>]
+                    [<a href="https://www.nature.com/articles/s41598-025-27497-6" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
                     [10] G. Yang, <span class="self">D. Yuan</span>, T. Zhang, Z. Chen.
                     &ldquo;A Sign Language to SQL Query Translation System for Enhancing Database Accessibility.&rdquo;
                     <em>Autom. Softw. Eng.</em>, 33(1):15, 2026.
-                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
                     [11] <span class="self">D. Yuan*</span>, G. Liang.
                     &ldquo;SyncCLIPAgent: Leveraging LLMs for Automated Video Editing with Audiovisual Synchronization.&rdquo;
                     <em>Cluster Comput.</em>, 29:483, 2026.
-                    [<a href="https://link.springer.com/article/10.1007/s10586-026-06308-1" target="_blank">Link</a>]
+                    [<a href="https://link.springer.com/article/10.1007/s10586-026-06308-1" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-subtitle">Conference</div>
@@ -389,7 +370,7 @@
                     [12] K. Peng, B. Liu, <span class="self">D. Yuan</span>, W. Xie, G. Huang, J. Sun, Y. Chen, W. Wu, J. Zhang, et al.
                     &ldquo;Immersive Intelligent Rendering Optimization for Digital Twin Virtual Campus: A Deep Learning-Driven Adaptive Approach.&rdquo;
                     <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
-                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank">Link</a>]
+                    [<a href="https://link.springer.com/article/10.1007/s10515-025-00558-w" target="_blank" rel="noopener">Link</a>]
                 </div>
 
                 <div class="pub-item">
@@ -397,11 +378,38 @@
                     &ldquo;3D Modeling and Web Visualization of Cloud Campus: A Technical Route Integrating Python Point Cloud Processing, Unity3D, and Three.js.&rdquo;
                     <em>Proc. 2026 3rd Int. Conf. Informatics</em>, 2026.
                 </div>
-                
-            </div>
+
+            </section>
         </div>
 
     </div>
+
+    <section class="wide">
+        <h2 class="section-title">Reviewer Service</h2>
+        <ul class="three-col">
+            <li>Cluster Computing</li>
+            <li>Journal of Cloud Computing</li>
+            <li>Scientific Reports</li>
+            <li>International Journal of Data Science and Analytics</li>
+            <li>International Journal of Computational Intelligence Systems</li>
+            <li>International Journal of Networked and Distributed Computing</li>
+            <li>International Journal on Document Analysis and Recognition</li>
+            <li>International Journal of Machine Learning and Cybernetics</li>
+            <li>Automated Software Engineering</li>
+            <li>Artificial Intelligence Review</li>
+            <li>Discover Artificial Intelligence</li>
+            <li>Discover Computing</li>
+            <li>Software Quality Journal</li>
+            <li>Annals of Mathematics and Artificial Intelligence</li>
+            <li>The Journal of Navigation</li>
+            <li>Machine Learning</li>
+            <li>Pattern Analysis and Applications</li>
+        </ul>
+    </section>
+
+    <footer>
+        Last updated: October 2026
+    </footer>
 
 </body>
 </html>
