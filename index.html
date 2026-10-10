@@ -75,18 +75,37 @@
         .entry { margin-bottom: 8px; }
         .entry-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 12px;
+            gap: 2px 12px;
         }
         .entry-title { font-weight: bold; }
         .entry-location { font-style: italic; display: block; }
-        .entry-date { white-space: nowrap; font-size: 10pt; }
+        .entry-date { white-space: nowrap; font-size: 10pt; margin-left: auto; }
 
         ul { list-style: disc; padding-left: 18px; margin-top: 2px; }
         ul li { font-size: 10pt; margin-bottom: 1px; }
-        ul.two-col { columns: 2; column-gap: 20px; }
-        ul.three-col { columns: 3; column-gap: 20px; }
-        ul.two-col li, ul.three-col li { break-inside: avoid; }
+        ul.two-col {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 26px;
+            row-gap: 3px;
+            margin-top: 5px;
+            align-items: start;
+        }
+        ul.two-col li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 0;
+            break-inside: avoid;
+        }
+        ul.two-col li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+        }
 
         /* ---------- publications ---------- */
         .pub-subtitle {
@@ -130,12 +149,13 @@
             a { color: #000; }
             .main-grid { gap: 0 10mm; break-inside: auto; }
             .entry, .pub-item, li { break-inside: avoid; }
+            .left-col ul.two-col { grid-template-columns: 1fr; }
             header { padding-top: 0; }
             footer { break-inside: avoid; }
         }
         @media screen and (max-width: 800px) {
             .main-grid { grid-template-columns: 1fr; gap: 0; }
-            ul.three-col { columns: 1; }
+            ul.two-col { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -272,15 +292,20 @@
 
             <section>
                 <h2 class="section-title">Teaching</h2>
-                <span class="entry-location">Guangdong University of Science and Technology (2025&ndash;Present)</span>
-                <ul class="two-col">
-                    <li>Operating Systems</li>
-                    <li>JavaEE Framework</li>
-                    <li>Principles of Computer Organization</li>
-                    <li>Linux System Administration</li>
-                    <li>Machine Learning</li>
-                    <li>Recommender Systems</li>
-                </ul>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-location">Guangdong University of Science and Technology</span>
+                        <span class="entry-date">2025&ndash;Present</span>
+                    </div>
+                    <ul class="two-col">
+                        <li>Operating Systems</li>
+                        <li>JavaEE Framework</li>
+                        <li>Principles of Computer Organization</li>
+                        <li>Linux System Administration</li>
+                        <li>Machine Learning</li>
+                        <li>Recommender Systems</li>
+                    </ul>
+                </div>
             </section>
 
         </div>
@@ -399,24 +424,24 @@
 
     <section class="wide">
         <h2 class="section-title">Reviewer Service</h2>
-        <ul class="three-col">
-            <li>Cluster Computing</li>
-            <li>Journal of Cloud Computing</li>
-            <li>Scientific Reports</li>
-            <li>International Journal of Data Science and Analytics</li>
-            <li>International Journal of Computational Intelligence Systems</li>
-            <li>International Journal of Networked and Distributed Computing</li>
-            <li>International Journal on Document Analysis and Recognition</li>
-            <li>International Journal of Machine Learning and Cybernetics</li>
-            <li>Automated Software Engineering</li>
+        <ul class="two-col">
+            <li>Annals of Mathematics and Artificial Intelligence</li>
             <li>Artificial Intelligence Review</li>
+            <li>Automated Software Engineering</li>
+            <li>Cluster Computing</li>
             <li>Discover Artificial Intelligence</li>
             <li>Discover Computing</li>
-            <li>Software Quality Journal</li>
-            <li>Annals of Mathematics and Artificial Intelligence</li>
-            <li>The Journal of Navigation</li>
+            <li>International Journal of Computational Intelligence Systems</li>
+            <li>International Journal of Data Science and Analytics</li>
+            <li>International Journal of Machine Learning and Cybernetics</li>
+            <li>International Journal of Networked and Distributed Computing</li>
+            <li>International Journal on Document Analysis and Recognition</li>
+            <li>Journal of Cloud Computing</li>
             <li>Machine Learning</li>
             <li>Pattern Analysis and Applications</li>
+            <li>Scientific Reports</li>
+            <li>Software Quality Journal</li>
+            <li>The Journal of Navigation</li>
         </ul>
     </section>
 
